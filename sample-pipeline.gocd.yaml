@@ -10,8 +10,8 @@ pipelines:
     environment_variables:
       PROJECT_ID: demo
     materials:
-      node-js:
-        git: git@github.com:stellawi/demo-node-js.git
+      nodejs:
+        git: ssh://git@github.com:stellawi/demo-node-js.git
     stages:
       - pre-deploy:
           fetch_materials: true
