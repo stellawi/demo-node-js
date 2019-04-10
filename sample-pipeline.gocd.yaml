@@ -11,7 +11,7 @@ pipelines:
       PROJECT_ID: demo
     materials:
       nodejs:
-        git: ssh://git@github.com:stellawi/demo-node-js.git
+        git: https://github.com/stellawi/demo-node-js.git
     stages:
       - pre-deploy:
           fetch_materials: true
