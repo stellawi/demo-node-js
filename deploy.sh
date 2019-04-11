@@ -2,4 +2,3 @@
 
 echo "This is deploy script"
 unzip -o Archive.zip
-npm start
