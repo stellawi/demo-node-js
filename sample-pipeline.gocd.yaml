@@ -12,15 +12,13 @@ pipelines:
     materials:
       nodejs:
         git: https://github.com/stellawi/demo-node-js.git
-      config:
-        git: https://github.com/stellawi/gocd-file-configuration.git
     stages:
       - verify:
           fetch_materials: true
           keep_artifacts: true
           clean_workspace: true
           jobs:
-            get-zip:
+            verification:
               elastic_profile_id: demo-app
               tasks:
                 - exec:
