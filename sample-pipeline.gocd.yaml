@@ -26,7 +26,7 @@ pipelines:
                     command: bash
                     arguments:
                     - -cl
-                    - echo "pre-deploy"
+                    - ./pre-deploy.sh
       - deploy:
           fetch_materials: true
           keep_artifacts: true
@@ -40,8 +40,13 @@ pipelines:
                     command: bash
                     arguments:
                     - -cl
-                    - echo "unzip"
-                    - echo "sample-nodejs:${GO_PIPELINE_LABEL}" >  sample-nodejs-version.txt
+                    - ./deploy.sh
+                - exec:
+                    run_if: passed
+                    command: bash
+                    arguments:
+                    - -cl
+                    - echo "sample-nodejs:${GO_PIPELINE_LABEL}" > sample-nodejs-version.txt
               artifacts:
                 - build:
                     source: sample-nodejs-version.txt
@@ -59,4 +64,4 @@ pipelines:
                     command: bash
                     arguments:
                     - -cl
-                    - echo "post-deploy"
+                    - ./post-deploy.sh
