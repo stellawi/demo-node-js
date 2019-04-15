@@ -10,6 +10,9 @@ pipelines:
     environment_variables:
       PROJECT_ID: demo
     materials:
+      configuration:
+        pipeline: configuration
+        stage: build
       nodejs:
         git: https://github.com/stellawi/demo-node-js.git
     stages:
