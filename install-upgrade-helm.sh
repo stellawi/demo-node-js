@@ -15,7 +15,6 @@ export PATH=$(pwd)/linux-amd64:$PATH
 popd
 
 helm init --client-only
-helm repo update
 
 helm upgrade --install ${name} --values=${values_file} \
   --version=${version} --namespace=${namespace} ${path} \
