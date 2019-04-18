@@ -24,12 +24,17 @@ pipelines:
             verification:
               elastic_profile_id: demo-app
               tasks:
+                - fetch:
+                    pipeline: configuration
+                    stage: build
+                    job: verification
+                    source: configuration
                 - exec:
                     run_if: passed
                     command: bash
                     arguments:
                     - -cl
-                    - ./pre-deploy.sh
+                    - chmod +x configuration/verify.sh && configuration/verify.sh
       - pre-deploy:
           fetch_materials: true
           keep_artifacts: true
