@@ -16,8 +16,8 @@ popd
 
 helm init --client-only
 
-helm upgrade --install ${name} --values=${values_file} \
-  --version=${version} --namespace=${namespace} ${path} \
-  --set=$options
+# helm upgrade --install ${name} --values=${values_file} \
+#   --version=${version} --namespace=${namespace} ${path} \
+#   --set=$options
 
 
