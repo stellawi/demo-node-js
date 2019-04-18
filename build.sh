@@ -1,1 +1,1 @@
-docker build -t stellaw05/demo-node-app .
+docker build -t stellaw05/demo-node-app:${GO_PIPELINE_LABEL-:1} .
