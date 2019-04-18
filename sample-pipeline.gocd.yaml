@@ -36,6 +36,10 @@ pipelines:
                     - -cl
                     - chmod +x configuration/verify.sh && configuration/verify.sh
       - pre-deploy:
+          environment_variables:
+            DOCKER_REGISTRY_USERNAME: stellaw05
+          secure_variables:
+            DOCKER_REGISTRY_PASSWORD: AES:bqH9zh9v4hcOhWLC1uvP6g==:sY0BqMvFSHXnCTZW55PiaNGTpln1gR+k0QKJxx6zIQM=
           fetch_materials: true
           keep_artifacts: true
           clean_workspace: true
@@ -49,6 +53,27 @@ pipelines:
                     arguments:
                     - -cl
                     - ./pre-deploy.sh
+            deploy-to-docker-registry:
+              elastic_profile_id: demo-app
+              tasks:
+                - exec:
+                    run_if: passed
+                    command: bash
+                    arguments:
+                    - -cl
+                    - echo $DOCKER_REGISTRY_PASSWORD | docker login -u ${DOCKER_REGISTRY_USERNAME} --password-stdin
+                - exec:
+                    run_if: passed
+                    command: bash
+                    arguments:
+                    - -cl
+                    - ./build.sh
+                - exec:
+                    run_if: passed
+                    command: bash
+                    arguments:
+                    - -cl
+                    - ./pushToRegistry.sh
       - deploy:
           fetch_materials: true
           keep_artifacts: true
