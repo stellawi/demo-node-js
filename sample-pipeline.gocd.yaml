@@ -34,7 +34,7 @@ pipelines:
                     command: bash
                     arguments:
                     - -cl
-                    - chmod +x configuration/verify.sh && configuration/verify.sh configuration.json
+                    - chmod +x configuration/verify.sh && configuration/verify.sh ./configuration.json
       - pre-deploy:
           environment_variables:
             DOCKER_REGISTRY_USERNAME: stellaw05
