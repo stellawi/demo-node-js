@@ -111,7 +111,7 @@ pipelines:
                   command: bash
                   arguments:
                   - -cl
-                  - chmod +x install-upgrade-helm.sh && install-upgrade-helm.sh
+                  - ./install-upgrade-helm.sh
       - post-deploy:
           fetch_materials: true
           keep_artifacts: true
