@@ -85,7 +85,8 @@ pipelines:
           clean_workspace: true
           jobs:
             unzip:
-              elastic_profile_id: demo-app
+              resources: 
+                - ip-172-31-19-107.ap-southeast-1.compute.internal
               tasks:
                 - exec:
                     run_if: passed
