@@ -2,5 +2,4 @@
 
 echo "This is deploy script"
 unzip -o Archive.zip
-# Run the application
-node index.js
+sudo /bin/systemctl restart node_app.service
