@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
 echo "This is deploy script"
-unzip -o Archive.zip
+echo $1
 
-cp Archive/index.js /home/ec2-user/nodejs/sample-app/
+unzip -o $1
+
+cp $1/index.js /home/ec2-user/nodejs/sample-app/
 sudo /bin/systemctl restart node_app.service
