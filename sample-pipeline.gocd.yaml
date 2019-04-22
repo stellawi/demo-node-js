@@ -2,10 +2,10 @@ format_version: 2
 environments:
   pre-qa:
     pipelines:
-      - deploy-node-via-zip
-      - deploy-node-to-kubernetes
+      - deploy-app-via-zip
+      - deploy-app-to-kubernetes
 pipelines:
-  deploy-node-via-zip:
+  deploy-app-via-zip:
     group: node-js-pipeline
     lock_behavior: unlockWhenFinished
     environment_variables:
@@ -96,7 +96,7 @@ pipelines:
                     arguments:
                     - -cl
                     - ./post-deploy.sh 
-  deploy-node-to-kubernetes:
+  deploy-app-to-kubernetes:
     group: node-js-pipeline
     lock_behavior: unlockWhenFinished
     environment_variables:
