@@ -2,10 +2,10 @@ format_version: 2
 environments:
   pre-qa:
     pipelines:
-      - sample-node-js
+      - deploy-node-via-zip
       - deploy-node-to-kubernetes
 pipelines:
-  sample-node-js:
+  deploy-node-via-zip:
     group: node-js-pipeline
     lock_behavior: unlockWhenFinished
     environment_variables:
