@@ -79,7 +79,7 @@ pipelines:
                     command: bash
                     arguments:
                     - -cl
-                    - ./deploy.sh zip-files/Archive.zip
+                    - ./deploy.sh zip-files/Archive
                 - exec:
                     run_if: passed
                     command: bash
