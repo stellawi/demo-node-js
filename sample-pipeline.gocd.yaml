@@ -175,7 +175,7 @@ pipelines:
                     command: bash
                     arguments:
                     - -cl
-                    - export DOCKER_IMAGE_TAG=${GO_PIPELINE_LABEL} && export OPTIONS="image.tag=${DOCKER_IMAGE_TAG}" &&./install-upgrade-helm.sh
+                    - export DOCKER_IMAGE_TAG=${GO_PIPELINE_LABEL} && export OPTIONS="image.tag=${DOCKER_IMAGE_TAG}" && ./install-upgrade-helm.sh
       - post-deploy:
           fetch_materials: true
           keep_artifacts: true
