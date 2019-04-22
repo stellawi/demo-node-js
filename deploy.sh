@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 echo "This is deploy script"
+ls $1
 echo $1
 
 unzip -o $1
