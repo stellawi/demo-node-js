@@ -5,6 +5,7 @@ version=${VERSION:-""}
 values_file=${VALUES_FILE_PATH:-undefined}
 namespace=${NAMESPACE:-undefined}
 options=${OPTIONS:-""}
+echo options
 
 pushd /tmp
 curl -O https://kubernetes-helm.storage.googleapis.com/helm-v2.11.0-linux-amd64.tar.gz
