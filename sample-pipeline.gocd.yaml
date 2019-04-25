@@ -35,7 +35,7 @@ pipelines:
                     command: bash
                     arguments:
                     - -cl
-                    - chmod +x configuration/verify.sh && configuration/verify.sh ./configuration.json
+                    - chmod +x configuration/verify.sh && configuration/verify.sh ./configuration-zip.json
       - pre-deploy:
           fetch_materials: true
           keep_artifacts: true
@@ -135,7 +135,7 @@ pipelines:
                     command: bash
                     arguments:
                     - -cl
-                    - chmod +x configuration/verify.sh && configuration/verify.sh ./configuration.json
+                    - chmod +x configuration/verify.sh && configuration/verify.sh ./configuration-kubernetes.json
       - pre-deploy:
           environment_variables:
             DOCKER_REGISTRY_USERNAME: stellaw05
