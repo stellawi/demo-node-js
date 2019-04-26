@@ -18,6 +18,8 @@ pipelines:
         git: https://github.com/stellawi/demo-node-js.git
     stages:
       - verify:
+          approval:
+            type: manual
           fetch_materials: true
           keep_artifacts: true
           clean_workspace: true
@@ -118,6 +120,8 @@ pipelines:
         git: https://github.com/stellawi/demo-node-js.git
     stages:
       - verify:
+          approval:
+            type: manual
           fetch_materials: true
           keep_artifacts: true
           clean_workspace: true
