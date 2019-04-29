@@ -16,8 +16,6 @@ pipelines:
         stage: build
       nodejs:
         git: https://github.com/stellawi/demo-node-js.git
-      config-repo:
-        git: https://github.com/stellawi/gocd-file-configuration.git
     stages:
       - verify:
           fetch_materials: true
