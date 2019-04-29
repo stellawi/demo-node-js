@@ -86,6 +86,8 @@ pipelines:
                     arguments:
                     - -cl
                     - echo "sample-nodejs:${GO_PIPELINE_LABEL}" > sample-nodejs-version.txt
+              tabs:
+                report: nodejs-version/sample-nodejs-version.txt
               artifacts:
                 - build:
                     source: sample-nodejs-version.txt
